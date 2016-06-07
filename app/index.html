@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>4 2 handlebars</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <div class="container"></div>
+
+    <!-- <div class="row photo-catalog"></div> -->
+
+    <script id="header-template" type="text/x-handlebars-template">
+      <div class="row header">
+        <div class="col-md-12">
+          <h1>My Albums :: {{count}}</h1>
+        </div>
+      </div>
+    </script>
+
+    <script id="album-tile" type="text/x-handlebars-template">
+
+      {{#each albums}}
+        <div class="col-md-4">
+          <div class="photo-container">
+            <a href="#" class="album-title">
+              <img src="{{thumb.image}}" alt="{{thumb.title}}" />
+              <div>{{title}}</div>
+            </a>
+
+            <ul>
+              {{#each photos}}
+                <li>{{title}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
